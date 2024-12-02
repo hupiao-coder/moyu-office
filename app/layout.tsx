@@ -14,10 +14,17 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+  applicationName: siteConfig.name,
   description: siteConfig.description,
   icons: {
     icon: "/favicon.ico",
   },
+  keywords: siteConfig.keywords,
+  creator: siteConfig.creator,
+  authors: siteConfig.authors,
+  publisher: siteConfig.publisher,
+  metadataBase: siteConfig.metadataBase,
+  openGraph: siteConfig.openGraph,
 };
 
 export const viewport: Viewport = {
