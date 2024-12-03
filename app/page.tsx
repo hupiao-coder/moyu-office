@@ -1,9 +1,13 @@
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
 import { Kbd } from "@nextui-org/kbd";
-import { getYear, getToday, getDayOfYear, getDayOfWeek, getDayOfWeekFormat, getDateOfMonth, getDaysInMonth } from "./data";
+import { Tooltip } from "@nextui-org/tooltip";
+import { getYear, getToday, getDayOfYear, getDayOfWeek, getDayOfWeekFormat, getDateOfMonth, getDaysInMonth, getDaysInDiff, getNextPublicHolidays } from "./data";
+import { Holiday } from './definitions';
 
 export default async function Home() {
+	const year = getYear();
+	const holidays = await getNextPublicHolidays();
 
 	// 定义数据
 	const data = {
@@ -27,9 +31,9 @@ export default async function Home() {
 					</CardHeader>
 					<Divider/>
 					<CardBody className="gap-1">
-						<p>{ data.year } 年已经过去 { data.dayOfYear } 天！</p>
-						<p>你好，摸鱼人！工作再忙，一定不要忘记摸鱼哦！</p>
-						<p>有事没事起身去茶水间，去厕所，去走廊走走，去找同事聊聊八卦！别老在工位上坐着，钱是老板的但命是自己的。</p>
+						<div>{ data.year } 年已经过去 { data.dayOfYear } 天！</div>
+						<div>你好，摸鱼人！工作再忙，一定不要忘记摸鱼哦！</div>
+						<div>有事没事起身去茶水间，去厕所，去走廊走走，去找同事聊聊八卦！别老在工位上坐着，钱是老板的但命是自己的。</div>
 					</CardBody>
 				</Card>
 
@@ -66,13 +70,18 @@ export default async function Home() {
 								<Kbd className="text-xl">节假日</Kbd>
 							</div>
 							<Divider className="my-3" />
-							<div>距离【元旦】还有 <span className="text-xl">0</span> 天</div>
-							<div>距离【春节】还有 <span className="text-xl">0</span> 天</div>
-							<div>距离【清明节】还有 <span className="text-xl">0</span> 天</div>
-							<div>距离【劳动节】还有 <span className="text-xl">0</span> 天</div>
-							<div>距离【端午节】还有 <span className="text-xl">0</span> 天</div>
-							<div>距离【国庆节】还有 <span className="text-xl">0</span> 天</div>
-							<div>距离【中秋节】还有 <span className="text-xl">0</span> 天</div>
+							{
+								holidays.map((holiday: Holiday, index: number) => (
+									<Tooltip key={`holiday-${index}`} showArrow color="primary" placement="top-start" className="text-white p-2" size="lg" delay={0} closeDelay={0} content={ holiday.date }>
+										<div key={`holiday-${index}`}>
+											距离【{ holiday.localName }】还有&nbsp;
+											<span className="text-xl">
+												{ getDaysInDiff(holiday.date) }
+											</span>&nbsp;天
+										</div>
+									</Tooltip>
+								))
+							}
 						</CardBody>
 					</Card>
 				</div>
