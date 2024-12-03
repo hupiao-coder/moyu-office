@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 require('dayjs/locale/zh-cn')
 dayjs.locale('zh-cn')
 // DayOfYear 增加了 .dayOfYear() API 返回一个 number 来表示 Dayjs 的日期是年中第几天，或设置成是年中第几天。
-var dayOfYear = require("dayjs/plugin/dayOfYear");
+import dayOfYear from "dayjs/plugin/dayOfYear";
 dayjs.extend(dayOfYear);
 
 
