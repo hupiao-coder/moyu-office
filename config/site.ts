@@ -36,7 +36,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/LouisLiu00",
+    github: "https://github.com/hupiao-coder/moyu-office",
     twitter: "https://x.com/LouisLiuOneself",
     docs: "https://liuxin.online",
   },

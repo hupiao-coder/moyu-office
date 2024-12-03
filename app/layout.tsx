@@ -54,13 +54,12 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl pt-6 px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link isExternal className="flex items-center gap-1 text-current" 
-                href="https://liuxin.online" title="#公众号：一个正经的程序员">
-                <span className="text-default-600">由</span>
-                <p className="text-primary">#公众号：一个正经的程序员</p>
-                <span className="text-default-600">提供技术支持</span>
+            <footer className="w-full flex items-center justify-center py-3 gap-1">
+              <span className="text-default-500">由</span>
+              <Link isExternal underline="hover" className="bg-yellow flex items-center"  href="https://liuxin.online" title="#公众号：一个正经的程序员">
+                <p className="text-primary" color="primary" >#公众号：一个正经的程序员</p>
               </Link>
+              <span className="text-default-500">提供技术支持</span>
             </footer>
           </div>
         </Providers>
