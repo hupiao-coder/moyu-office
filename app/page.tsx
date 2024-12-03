@@ -25,23 +25,21 @@ export default async function Home() {
 			<div className="inline-block text-center justify-center">
 				<Card fullWidth className="p-4">
 					<CardHeader className="flex gap-3">
-						<div className="flex flex-col">
-							<p className="text-xl">【摸鱼办】提醒您: 今天是{ data.today }，{ data.dayOfWeekFormat }。 </p>
-						</div>
+						<div className="text-xl">【摸鱼办】提醒您: 今天是{ data.today }，{ data.dayOfWeekFormat } 🗓️</div>
 					</CardHeader>
 					<Divider/>
 					<CardBody className="gap-1">
-						<div>{ data.year } 年已经过去 { data.dayOfYear } 天！</div>
-						<div>你好，摸鱼人！工作再忙，一定不要忘记摸鱼哦！</div>
-						<div>有事没事起身去茶水间，去厕所，去走廊走走，去找同事聊聊八卦！别老在工位上坐着，钱是老板的但命是自己的。</div>
+						<div>{ data.year } 年已经过去 { data.dayOfYear } 天 ⌛️！</div>
+						<div>你好，摸鱼人！🧑‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！</div>
+						<div>有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🥸 但命是自己的 🤓。</div>
 					</CardBody>
 				</Card>
 
-				<div className="flex gap-4 mt-4">
-					<Card fullWidth className="p-5">
-						<CardBody className="gap-1">
+				<div className="md:flex gap-4">
+					<Card fullWidth className="mt-5 p-5">
+						<CardBody>
 							<div>
-								<Kbd className="text-xl">周末</Kbd>
+								<Kbd className="text-xl">🥳 周末</Kbd>
 							</div>
 							<Divider className="my-2" />
 							<div>距离【周六】还有 <span className="text-xl">{ 6 - data.dayOfWeek }</span> 天</div>
@@ -49,10 +47,10 @@ export default async function Home() {
 						</CardBody>
 					</Card>
 
-					<Card fullWidth className="p-5">
-						<CardBody className="">
+					<Card fullWidth className="mt-5 p-5">
+						<CardBody>
 							<div>
-								<Kbd className="text-xl">工资</Kbd>
+								<Kbd className="text-xl">💴 工资</Kbd>
 							</div>
 							<Divider className="my-2" />
 							<div>距离【1号发工资】还有 <span className="text-xl">{ 1 >= data.date ? (1 - data.date) : (data.daysInMonth - data.date + 1) }</span> 天</div>
@@ -64,12 +62,12 @@ export default async function Home() {
 						</CardBody>
 					</Card>
 
-					<Card fullWidth className="p-5">
-						<CardBody className="">
+					<Card fullWidth className="mt-5 p-5">
+						<CardBody>
 							<div>
-								<Kbd className="text-xl">节假日</Kbd>
+								<Kbd className="text-xl">🇨🇳 节假日</Kbd>
 							</div>
-							<Divider className="my-3" />
+							<Divider className="my-2" />
 							{
 								holidays.map((holiday: Holiday, index: number) => (
 									<Tooltip key={`holiday-${index}`} showArrow color="primary" placement="top-start" className="text-white p-2" size="lg" delay={0} closeDelay={0} content={ holiday.date }>
