@@ -6,6 +6,9 @@ import { getYear, getToday, getDayOfYear, getDayOfWeek, getDayOfWeekFormat, getD
 import { Holiday } from './definitions';
 import { ClipboardButton, ClipboardRoot } from "@/components/ui/clipboard"
 
+// 设置页面缓存时间为1小时
+export const revalidate = 3600;
+
 export default async function Home() {
 	const year = getYear();
 	const holidays = await getNextPublicHolidays();
