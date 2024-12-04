@@ -4,11 +4,12 @@ import { Kbd } from "@nextui-org/kbd";
 import { Tooltip } from "@nextui-org/tooltip";
 import { getYear, getToday, getDayOfYear, getDayOfWeek, getDayOfWeekFormat, getDateOfMonth, getDaysInMonth, getDaysInDiff, getNextPublicHolidays } from "./data";
 import { Holiday } from './definitions';
+import { ClipboardButton, ClipboardRoot } from "@/components/ui/clipboard"
 
 export default async function Home() {
 	const year = getYear();
 	const holidays = await getNextPublicHolidays();
-
+	
 	// 定义数据
 	const data = {
 		year: getYear(),
@@ -20,15 +21,45 @@ export default async function Home() {
 		daysInMonth: getDaysInMonth(),
 	};
 
+	// 定义复制文本，从开头写没有空格
+	const text = `
+【摸鱼办】提醒您：今天是${ data.today }，${ data.dayOfWeekFormat } 🗓️
+【官网】https://moyu.liuxin.online \n
+${ data.year } 年已经过去 ${ data.dayOfYear } 天 ⌛️！
+你好，摸鱼人！🧑‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！
+有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🥸 但命是自己的 🤓。\n
+🥳 周末
+距离【周六】还有 ${ 6 - data.dayOfWeek } 天
+距离【周日】还有 ${ data.dayOfWeek == 0 ? 0 : 7 - data.dayOfWeek } 天\n
+💴 工资
+距离【1号发工资】还有 ${ 1 >= data.date ? (1 - data.date) : (data.daysInMonth - data.date + 1) } 天
+距离【5号发工资】还有 ${ 5 >= data.date ? (5 - data.date) : (data.daysInMonth - data.date + 5) } 天
+距离【10号发工资】还有 ${ 10 >= data.date ? (10 - data.date) : (data.daysInMonth - data.date + 10) } 天
+距离【15号发工资】还有 ${ 15 >= data.date ? (15 - data.date) : (data.daysInMonth - data.date + 15) } 天
+距离【20号发工资】还有 ${ 20 >= data.date ? (20 - data.date) : (data.daysInMonth - data.date + 20) } 天
+距离【月底发工资】还有 ${ data.daysInMonth - data.date } 天\n
+🇨🇳 节假日
+${
+	holidays.map((holiday: Holiday) => (
+		`距离【${ holiday.localName }(${ holiday.date })】还有 ${ getDaysInDiff(holiday.date) } 天`
+	)).join('\n')
+}
+`;
+
 	return (
 		<section className="flex flex-col justify-center">
 			<div className="inline-block text-center justify-center">
 				<Card fullWidth className="p-4">
-					<CardHeader className="flex gap-3">
-						<div className="text-xl">【摸鱼办】提醒您: 今天是{ data.today }，{ data.dayOfWeekFormat } 🗓️</div>
+					<CardHeader className="flex justify-between">
+						<div className="text-xl">【摸鱼办】提醒您：今天是{ data.today }，{ data.dayOfWeekFormat } 🗓️</div>
+						<div>
+							<ClipboardRoot value={text}>
+								<ClipboardButton className="px-2" />
+							</ClipboardRoot>
+						</div>
 					</CardHeader>
-					<Divider/>
 					<CardBody className="gap-1">
+						<Divider className="mb-3"/>
 						<div>{ data.year } 年已经过去 { data.dayOfYear } 天 ⌛️！</div>
 						<div>你好，摸鱼人！🧑‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！</div>
 						<div>有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🥸 但命是自己的 🤓。</div>
