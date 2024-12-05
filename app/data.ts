@@ -49,8 +49,9 @@ export function getDaysInMonth() {
 export function getDaysInDiff(targetDate: string) {
     const target = dayjs(targetDate);
     const today = dayjs();
-    const diff = target.diff(today, 'day');
-    return diff;
+    const diff = target.diff(today, 'day', true);
+    // 如果差值大于0，向上取整，否则返回0
+    return diff > 0 ? Math.ceil(diff) : 0;
 }
 
 // 获取公共节假日 - https://date.nager.at
