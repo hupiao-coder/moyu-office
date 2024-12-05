@@ -25,8 +25,7 @@ export default async function Home() {
 	};
 
 	// 定义复制文本，从开头写没有空格
-	const text = `
-【摸鱼办】提醒您：今天是${ data.today }，${ data.dayOfWeekFormat } 🗓️
+	const text = `【摸鱼办】提醒您：今天是${ data.today }，${ data.dayOfWeekFormat } 🗓️
 【官网】https://moyu.liuxin.online \n
 ${ data.year } 年已经过去 ${ data.dayOfYear } 天 ⌛️！
 你好，摸鱼人！🧑‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！
@@ -46,7 +45,8 @@ ${
 	holidays.map((holiday: Holiday) => (
 		`距离【${ holiday.localName }(${ holiday.date })】还有 ${ getDaysInDiff(holiday.date) } 天`
 	)).join('\n')
-}
+}\n
+由 #公众号：一个正经的程序员 提供技术支持
 `;
 
 	return (
