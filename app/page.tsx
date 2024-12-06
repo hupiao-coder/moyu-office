@@ -25,11 +25,11 @@ export default async function Home() {
 	};
 
 	// 定义复制文本，从开头写没有空格
-	const text = `【摸鱼办】提醒您：今天是${ data.today }，${ data.dayOfWeekFormat } 🗓️
+	const text = `【摸鱼办】提醒您：今天是${ data.today }，${ data.dayOfWeekFormat } 😜
 【官网】https://moyu.liuxin.online \n
 ${ data.year } 年已经过去 ${ data.dayOfYear } 天 ⌛️！
-你好，摸鱼人！🧑‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！
-有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🥸 但命是自己的 🤓。\n
+你好，摸鱼人！👨‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！
+有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🤵‍♂️ 但命是自己的 🤷‍♂️。\n
 🥳 周末
 距离【周六】还有 ${ 6 - data.dayOfWeek } 天
 距离【周日】还有 ${ data.dayOfWeek == 0 ? 0 : 7 - data.dayOfWeek } 天\n
@@ -40,7 +40,7 @@ ${ data.year } 年已经过去 ${ data.dayOfYear } 天 ⌛️！
 距离【15号发工资】还有 ${ 15 >= data.date ? (15 - data.date) : (data.daysInMonth - data.date + 15) } 天
 距离【20号发工资】还有 ${ 20 >= data.date ? (20 - data.date) : (data.daysInMonth - data.date + 20) } 天
 距离【月底发工资】还有 ${ data.daysInMonth - data.date } 天\n
-🇨🇳 节假日
+🎉 节假日
 ${
 	holidays.map((holiday: Holiday) => (
 		`距离【${ holiday.localName }(${ holiday.date })】还有 ${ getDaysInDiff(holiday.date) } 天`
@@ -54,7 +54,7 @@ ${
 			<div className="inline-block text-center justify-center">
 				<Card fullWidth className="p-4">
 					<CardHeader className="flex justify-between">
-						<div className="text-xl">【摸鱼办】提醒您：今天是{ data.today }，{ data.dayOfWeekFormat } 🗓️</div>
+						<div className="text-xl">【摸鱼办】提醒您：今天是{ data.today }，{ data.dayOfWeekFormat } 😜</div>
 						<div>
 							<ClipboardRoot value={text}>
 								<ClipboardButton className="px-2" />
@@ -64,8 +64,8 @@ ${
 					<CardBody className="gap-1">
 						<Divider className="mb-3"/>
 						<div>{ data.year } 年已经过去 { data.dayOfYear } 天 ⌛️！</div>
-						<div>你好，摸鱼人！🧑‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！</div>
-						<div>有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🥸 但命是自己的 🤓。</div>
+						<div>你好，摸鱼人！👨‍💻 工作再忙，一定不要忘记摸鱼哦 🐟！</div>
+						<div>有事没事起身去茶水间 ☕️，去厕所 🚾，去走廊走走 🚶，去找同事聊聊八卦 🆕！别老在工位上坐着，钱是老板的 🤵‍♂️ 但命是自己的 🤷‍♂️。</div>
 					</CardBody>
 				</Card>
 
@@ -99,7 +99,7 @@ ${
 					<Card fullWidth className="mt-5 p-5">
 						<CardBody>
 							<div>
-								<Kbd className="text-xl">🇨🇳 节假日</Kbd>
+								<Kbd className="text-xl">🎉 节假日</Kbd>
 							</div>
 							<Divider className="my-2" />
 							{
