@@ -42,7 +42,7 @@ export const Navbar = () => {
             <p className="font-bold text-inherit text-2xl">摸鱼办</p>
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-8 justify-start ml-4">
+        <ul className="hidden sm:flex gap-8 justify-start ml-4">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -93,14 +93,8 @@ export const Navbar = () => {
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
+                color="foreground"
+                href={item.href}
                 size="lg"
               >
                 {item.label}
