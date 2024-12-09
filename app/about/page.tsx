@@ -7,17 +7,20 @@ export default function AboutPage() {
 
 			<section className="mb-8 text-left">
 				<p className="text-lg leading-7">
-					欢迎来到 <strong>摸鱼办</strong>！我们是一款专为上班族打造的小工具，旨在帮助大家在繁忙的工作中寻找片刻的轻松与乐趣！
+					欢迎来到 <strong>摸鱼办</strong>！我们是一款专为上班族打造的在线摸鱼小工具，旨在帮助大家在繁忙的工作中寻找片刻的轻松与乐趣！
 				</p>
 			</section>
 
 			<section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">网站设计</h2>
 				<ul className="list-disc list-inside space-y-2 text-left">
-					<li>🎯 <strong>工作调剂</strong>：用幽默温馨的文案提醒大家工作重要，但健康和生活更重要。</li>
-					<li>⏰ <strong>时间提醒</strong>：实时更新距离周末、发工资日和节假日的天数，帮助你规划生活，保持期待。</li>
+					<li>🔥 <strong>幽默文案</strong>：用幽默温馨的文案提醒大家工作重要，但健康和生活更重要。</li>
+					<li>⏰ <strong>日历提醒</strong>：实时更新距离周末、发工资日和节假日的天数，帮助你规划生活，保持期待。</li>
+					<li>📒 <strong>每日一句</strong>：每日生成一条励志、幽默或轻松的句子，积累并提升自己。</li>
+					<li>🎮 <strong>游戏中心</strong>：提供丰富的在线轻量小游戏，无需下载安装，在线畅玩，沉浸式体验快速放松。</li>
+					<li>🌗 <strong>黑白主题</strong>：自由切换黑白主题，方便用户根据喜好调整视觉界面。</li>
 					<li>✨ <strong>极简设计</strong>：界面清爽，信息一目了然，带来轻松的用户体验。</li>
-
+					<li>⚡️ <strong>一键分享</strong>：支持用户快速复制并分享给好友，让更多人了解和使用摸鱼办。</li>
 				</ul>
 				</section>
 
