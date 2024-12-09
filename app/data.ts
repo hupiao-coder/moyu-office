@@ -8,7 +8,6 @@ import dayOfYear from "dayjs/plugin/dayOfYear";
 dayjs.extend(dayOfYear);
 // 数据定义
 import { Holiday } from './definitions';
-import { log } from 'console';
 
 // 获取今年
 export function getYear() {
