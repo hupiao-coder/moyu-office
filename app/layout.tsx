@@ -57,6 +57,19 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-N46WK7SG');`
             }}
           />
+          {/* Google Analytics Script */}
+          <Script strategy="afterInteractive" async src="https://www.googletagmanager.com/gtag/js?id=G-7QN4Y90X28" />
+          <Script
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-7QN4Y90X28');
+              `
+            }}
+          />
         {/* 百度统计 */}
         <Script
           strategy="afterInteractive"
