@@ -2,16 +2,24 @@
 
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Image, useDisclosure } from "@nextui-org/react";
 import { Sentence } from "../definitions";
+import WatermarkImage from "./WatermarkImage";
+import { useState } from "react";
 
 export default function ShareModal({ sentence }: { sentence: Sentence }) {
 
+    // 定义水印图片
+    const [watermarkedImageUrl, setWatermarkedImageUrl] = useState<string | null>(null);
     // 定义弹出框
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     // 下载图片
     const handleDownload = async () => {
+        if (!watermarkedImageUrl) {
+            alert("图片尚未加载完成！");
+            return;
+        }
         // 这是图片的 URL，可以替换成你自己的图片 URL
-        const imageUrl = sentence.fenxiang_img;
+        const imageUrl = watermarkedImageUrl;
         try {
             // 图片的 URL
             const response = await fetch(imageUrl);
@@ -46,7 +54,11 @@ export default function ShareModal({ sentence }: { sentence: Sentence }) {
                 <ModalContent>
                 {(onClose) => (
                     <>
-                        <Image src={ sentence.fenxiang_img } radius="none" alt={ sentence.note } className="z-0 w-full h-full scale-100 -translate-y-6 object-cover" />
+                        {/* 默认图片 */}
+                        {/* <Image src={ sentence.fenxiang_img } radius="none" alt={ sentence.note } className="z-0 w-full h-full scale-100 -translate-y-6 object-cover" /> */}
+                        {/* 水印图片 */}
+                        <WatermarkImage src={ sentence.fenxiang_img } alt={ sentence.note } watermarkText="摸鱼办：https://moyu.liuxin.online" onWatermarkedImageUrl={ (url: string) => setWatermarkedImageUrl(url) } />
+                        {/* 底部按钮 */}
                         <ModalFooter className="pt-0">
                             <Button color="danger" variant="light" onPress={onClose}>关闭</Button>
                             <Button color="primary" className="text-white" onPress={handleDownload}>下载</Button>
