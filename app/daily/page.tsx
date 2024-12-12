@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from 'next'
 import { Card, CardHeader } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import { getDailySentence } from "./data";
@@ -7,6 +8,23 @@ import ShareModal from './components/ShareModal';
 
 // 设置页面缓存时间为1小时
 export const revalidate = 3600;
+
+// 生成动态元数据
+export async function generateMetadata(
+	parent: ResolvingMetadata
+  ): Promise<Metadata> {
+	// 获取每日一句
+	const sentence: Sentence = await getDailySentence(null);
+	// 选择性地访问和扩展（而不是替换）父元数据
+	const previousImages = (await parent).openGraph?.images || []
+	return {
+		title: `${sentence.note} | 每日一句`,
+		description: `${sentence.content}【${sentence.note}】—— ${dayjs(sentence.dateline).format('D MMM, YYYY')}`,
+		openGraph: {
+			images: [sentence.fenxiang_img, ...previousImages],
+		}
+	}
+}
 
 export default async function DailyPage() {
 
