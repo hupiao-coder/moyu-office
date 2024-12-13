@@ -51,14 +51,16 @@ ${
 
 	return (
 		<section className="flex flex-col justify-center">
-			<div className="inline-block text-center justify-center">
+			<div className="inline-block justify-center">
 				<Card fullWidth className="p-4">
-					<CardHeader className="flex justify-between">
-						<div className="text-xl">【摸鱼办】提醒您：今天是{ data.today }，{ data.dayOfWeekFormat } 😜</div>
-						<div>
-							<ClipboardRoot value={text}>
-								<ClipboardButton className="px-2" />
-							</ClipboardRoot>
+					<CardHeader>
+						<div className="w-full flex md:flex-row flex-col-reverse md:justify-between md:items-center">
+							<div className="text-xl">【摸鱼办】提醒您：今天是{ data.today }，{ data.dayOfWeekFormat } 😜</div>
+							<div className="self-end mb-6 md:mb-0">
+								<ClipboardRoot value={text}>
+									<ClipboardButton className="px-2" />
+								</ClipboardRoot>
+							</div>
 						</div>
 					</CardHeader>
 					<CardBody className="gap-1">

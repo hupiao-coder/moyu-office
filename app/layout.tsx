@@ -16,7 +16,7 @@ import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: `${siteConfig.name} | 一个正经的程序员`,
     template: `%s | ${siteConfig.name} | 一个正经的程序员`,
   },
   applicationName: siteConfig.name,
