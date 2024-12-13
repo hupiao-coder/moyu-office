@@ -1,7 +1,8 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import Script from 'next/script';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Link } from "@nextui-org/link";
 import { Button } from "@nextui-org/button";
 import { Tooltip } from "@nextui-org/tooltip";
@@ -105,6 +106,8 @@ export default function RootLayout({
               	{children}
                 {/* Enable Web Analytics in Vercel */}
                 <Analytics />
+                {/* Enable Speed Insights in Vercel */}
+                <SpeedInsights/>
             </main>
             <div className="w-11/12 sm:flex">
               <footer className="w-full flex items-center justify-center py-3 gap-1">
