@@ -30,7 +30,7 @@ export const Navbar = () => {
 	);
 
 	return (
-		<NextUINavbar maxWidth="xl" position="sticky" isBordered className="blue" isMenuOpen={ isMenuOpen } >
+		<NextUINavbar maxWidth="xl" position="sticky" isBordered className="fixed" isMenuOpen={ isMenuOpen } isBlurred={ false }>
 			{/* PC 头部 */}
 			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
 				<NavbarBrand as="li" className="gap-3 max-w-fit">

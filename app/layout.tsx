@@ -89,7 +89,7 @@ export default function RootLayout({
 						{/* PC 导航栏 */}
 						<Navbar />
 						{/* 网页主体 */}
-						<main className="container mx-auto max-w-7xl pt-6 px-6 flex-grow">
+						<main className="container mx-auto max-w-7xl pt-20 px-6 flex-grow">
 							{/* 主体子元素 */}
 							{children}
 							{/* Enable Web Analytics in Vercel */}
