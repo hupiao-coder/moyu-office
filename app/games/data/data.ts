@@ -29,6 +29,9 @@ export function getGames() {
         { name: "3D 魔方", url: "https://game.ur1.fun/cube/", icon: "https://game.ur1.fun/cube/favicon.png", description: "魔方与华容道、法国的独立钻石棋并称为智力游戏界的三大不可思议。" },
         { name: "叠砖块", url: "https://game.ur1.fun/stack/", icon: "https://game.ur1.fun/stack/favicon.png", description: "试试你能叠多高。" },
         { name: "恐龙快跑", url: "https://game.ur1.fun/dinosaur/", icon: "https://game.ur1.fun/dinosaur/favicon.png", description: "谷歌浏览器断网时的恐龙小彩蛋。" },
+        { name: "便携小空调", url: "http://game.waimai.zone/ac/", icon: "http://game.waimai.zone/ac/png.png", description: "为你的夏日带来炎凉，冬日带来温暖！" },
+        { name: "黑白小电视", url: "http://game.waimai.zone/stv/", icon: "", description: "是你们想要的那个小电视。" },
+        { name: "在线养仓鼠", url: "https://hammyhome.com", icon: "https://hammyhome.com/favicon.ico", description: "使用 Hammy Home 设计和照顾虚拟仓鼠及其家。" },
     ];
     return games;
 }
