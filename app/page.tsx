@@ -71,8 +71,8 @@ ${
 					</CardBody>
 				</Card>
 
-				<div className="md:flex gap-4">
-					<Card fullWidth className="mt-5 p-5">
+				<div className="md:flex gap-5 2xl:gap-20">
+					<Card fullWidth className="mt-5 2xl:mt-20 p-5">
 						<CardBody>
 							<div>
 								<Kbd className="text-xl">🥳 周末</Kbd>
@@ -83,7 +83,7 @@ ${
 						</CardBody>
 					</Card>
 
-					<Card fullWidth className="mt-5 p-5">
+					<Card fullWidth className="mt-5 2xl:mt-20 p-5">
 						<CardBody>
 							<div>
 								<Kbd className="text-xl">💴 工资</Kbd>
@@ -98,7 +98,7 @@ ${
 						</CardBody>
 					</Card>
 
-					<Card fullWidth className="mt-5 p-5">
+					<Card fullWidth className="mt-5 2xl:mt-20 p-5">
 						<CardBody>
 							<div>
 								<Kbd className="text-xl">🎉 节假日</Kbd>
