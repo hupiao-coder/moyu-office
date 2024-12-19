@@ -9,12 +9,12 @@ export default function GameCard({ game }: { game: Game}) {
 			<CardHeader className="flex gap-3">
 				<Image src={ game.icon } fallbackSrc="https://via.placeholder.com/128x128.png/6495ed/ffffff?text=+" alt={ game.name } radius="sm" height={40} width={40} />
 				<div className="flex flex-col">
-					<p className="text-xl">{ game.name }</p>
+					<p className="text-base">{ game.name }</p>
 				</div>
 			</CardHeader>
 			<Divider />
 			<CardBody className="h-[100px]">
-				<p>{ game.description }</p>
+				<p className="text-sm">{ game.description }</p>
 			</CardBody>
 			<Divider />
 			<CardFooter className="justify-end">

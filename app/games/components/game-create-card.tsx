@@ -18,12 +18,12 @@ export default function GameCreateCard() {
 				<CardHeader className="flex gap-3">
 					<IoGameControllerOutline className="text-primary" size={ 40 } />
 					<div className="flex flex-col">
-						<p className="text-xl">申请收录</p>
+						<p className="text-base">申请收录</p>
 					</div>
 				</CardHeader>
 				<Divider />
 				<CardBody className="h-[100px]">
-					<p>如果您还知道一些优质的免费在线游戏，欢迎提交申请以供收录，帮助摸鱼办一起做大做强！</p>
+					<p className="text-sm">如果您还知道一些优质的免费在线游戏，欢迎提交申请以供收录，帮助摸鱼办一起做大做强！</p>
 				</CardBody>
 				<Divider />
 				<CardFooter className="justify-end">
