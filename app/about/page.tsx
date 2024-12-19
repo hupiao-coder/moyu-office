@@ -22,11 +22,20 @@ export default function AboutPage() {
 					<li>✨ <strong>极简设计</strong>：界面清爽，信息一目了然，带来轻松的用户体验。</li>
 					<li>⚡️ <strong>一键分享</strong>：支持用户快速复制并分享给好友，让更多人了解和使用摸鱼办。</li>
 				</ul>
-				</section>
+            </section>
 
-				<section className="mb-8">
+            <section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">免责声明</h2>
+                <div className="space-y-2 leading-6 text-left">
+                    <p>本站“游戏中心”所提供的所有游戏链接均源自网络免费收录，旨在为用户提供丰富的游戏资源选择。我们并不直接参与或运营这些游戏，也不对游戏内容、版权归属、游戏质量及安全性等方面承担任何责任。用户在访问这些游戏链接时，请自行判断游戏的适宜性、安全性及合法性，并遵守相关法律法规及游戏平台的规定。</p>
+                    <p>我们强烈建议用户在游玩或下载游戏前，仔细阅读游戏说明、用户协议及隐私政策，确保自身权益不受侵害。同时，对于因使用本站“游戏中心”链接而产生的任何纠纷、损失或损害，本站概不负责。</p>
+                    <p>请用户理性游戏，合理安排时间，避免沉迷游戏。我们致力于为用户提供健康、安全的网络环境，感谢您的理解与支持。</p>
+                </div>
+			</section>
+
+            <section className="mb-8">
 				<h2 className="text-2xl font-semibold mb-4">技术团队</h2>
-				<p className="text-lg leading-7 text-left">
+				<p className="leading-6 text-left">
 					<span>摸鱼办由{' '}</span>
 					<a href="https://liuxin.online" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4" title="#公众号：一个正经的程序员">
 						<span>#公众号：一个正经的程序员</span>
@@ -41,7 +50,7 @@ export default function AboutPage() {
 
 			<section>
 				<h2 className="text-2xl font-semibold mb-4">联系我们</h2>
-				<p className="text-lg leading-7 text-left">
+				<p className="leading-6 text-left">
 					<span>如果你对摸鱼办有任何建议或反馈，欢迎通过{' '}</span>
 					<a href="https://github.com/hupiao-coder/moyu-office/issues" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4" title="GitHub">GitHub</a>
 					<span>{' '}联系我们，和我们一起让工作变得更轻松！</span>
