@@ -83,7 +83,14 @@ export default function RootLayout({
 				<noscript>
 					<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N46WK7SG" height="0" width="0" style={{ display: 'none',visibility: 'hidden' }}></iframe>
 				</noscript>
-				
+				{/* 360分析 */}
+				<Script strategy="afterInteractive" dangerouslySetInnerHTML={{
+					__html: `
+					(function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};
+					b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);
+					s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)
+					})(window,document,"script","_qha",580072,false);`,
+				}} />
 				<Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
 					<div className="relative flex flex-col h-screen">
 						{/* PC 导航栏 */}
