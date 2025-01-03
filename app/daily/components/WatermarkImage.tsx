@@ -40,19 +40,26 @@ export default function WatermarkImage(
 				ctx.fillStyle = "rgba(255, 255, 255, 1)";
 				ctx.textAlign = "right";
 				ctx.textBaseline = "bottom";
-
 				// 绘制水印
 				ctx.fillText(watermarkText, canvas.width - 50, canvas.height - 20);
 
-				
-				// 将 Canvas 转换为 Base64 数据 URL
-				const url = canvas.toDataURL("image/png");
-				setWatermarkedImageUrl(url);
+				// 创建二维码图片对象
+				const watermarkImage = new Image();
+				// 避免跨域问题
+				watermarkImage.crossOrigin = "anonymous";
+				watermarkImage.src = '/moyu-qrcode.png';
 
-				// 通知父组件
-				if (onWatermarkedImageUrl) {
-					onWatermarkedImageUrl(url);
-				}
+				watermarkImage.onload = () => {
+					// 绘制二维码
+					ctx.drawImage(watermarkImage, 20, canvas.height - 400);
+					// 将 Canvas 转换为 Base64 数据 URL
+					const url = canvas.toDataURL("image/png");
+					setWatermarkedImageUrl(url);
+					// 通知父组件
+					if (onWatermarkedImageUrl) {
+						onWatermarkedImageUrl(url);
+					}
+				};
 			};
 
 			image.onerror = () => {
