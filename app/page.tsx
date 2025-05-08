@@ -39,6 +39,7 @@ ${ data.year } 年已经过去 ${ data.dayOfYear } 天 ⌛️！
 距离【10号发工资】还有 ${ 10 >= data.date ? (10 - data.date) : (data.daysInMonth - data.date + 10) } 天
 距离【15号发工资】还有 ${ 15 >= data.date ? (15 - data.date) : (data.daysInMonth - data.date + 15) } 天
 距离【20号发工资】还有 ${ 20 >= data.date ? (20 - data.date) : (data.daysInMonth - data.date + 20) } 天
+距离【25号发工资】还有 ${ 25 >= data.date ? (25 - data.date) : (data.daysInMonth - data.date + 25) } 天
 距离【月底发工资】还有 ${ data.daysInMonth - data.date } 天\n
 🎉 节假日
 ${
@@ -94,6 +95,7 @@ ${
 							<div>距离【10号发工资】还有 <span className="text-xl">{ 10 >= data.date ? (10 - data.date) : (data.daysInMonth - data.date + 10) }</span> 天</div>
 							<div>距离【15号发工资】还有 <span className="text-xl">{ 15 >= data.date ? (15 - data.date) : (data.daysInMonth - data.date + 15) }</span> 天</div>
 							<div>距离【20号发工资】还有 <span className="text-xl">{ 20 >= data.date ? (20 - data.date) : (data.daysInMonth - data.date + 20) }</span> 天</div>
+							<div>距离【25号发工资】还有 <span className="text-xl">{ 25 >= data.date ? (25 - data.date) : (data.daysInMonth - data.date + 25) }</span> 天</div>
 							<div>距离【月底发工资】还有 <span className="text-xl">{ data.daysInMonth - data.date }</span> 天</div>
 						</CardBody>
 					</Card>
