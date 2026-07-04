@@ -9,7 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^3.2.2",
+		"@chakra-ui/react": "^3.36.0",
 		"@emotion/react": "^11.13.5",
 		"@nextui-org/button": "2.0.38",
 		"@nextui-org/code": "2.0.33",
