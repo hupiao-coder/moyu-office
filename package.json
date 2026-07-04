@@ -1,6 +1,6 @@
 {
-	"name": "next-app-template",
-	"version": "0.0.1",
+	"name": "moyu-office",
+	"version": "1.0.2",
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbo",
